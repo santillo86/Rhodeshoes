@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rhode Shoes · Catálogo — On Your Way</title>
+<meta name="description" content="Catálogo de zapatillas Rhode Shoes. Desde Banfield a donde vayas: modelos, talles disponibles y envíos a todo el país.">
+<meta name="theme-color" content="#f3d7e1">
+<meta property="og:title" content="Rhode Shoes · On Your Way">
+<meta property="og:description" content="Catálogo de zapatillas. Elegí tu par, consultá el talle y te lo mandamos a todo el país.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/og-rhode.png">
+<meta property="og:locale" content="es_AR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Store","name":"Rhode Shoes",
+"description":"Catálogo de zapatillas. Modelos, talles disponibles y envíos a todo el país.",
+"address":{"@type":"PostalAddress","addressLocality":"Banfield","addressRegion":"Buenos Aires","addressCountry":"AR"},
+"sameAs":["https://www.instagram.com/rhode.shoes/"],
+"areaServed":"AR","currenciesAccepted":"ARS"}
+</script>
+</head>
+
+<body>
+<a class="skip" href="#catalogo">Saltar al catálogo</a>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <span>Desde Banfield, a donde vayas</span>
+  <span>Envíos a todo el país</span>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <a class="logo" href="#inicio">rhode<span class="dot">.</span> <small>SHOES</small></a>
+  <nav class="site-nav">
+    <a href="#catalogo">Zapatillas</a>
+    <a href="#talles" class="hide-sm">Talles</a>
+    <a href="#marca"  class="hide-sm">Nosotros</a>
+    <a href="#faq"    class="hide-sm">FAQ</a>
+    <a class="btn btn--dark" href="https://www.instagram.com/rhode.shoes/" target="_blank" rel="noopener">Instagram <span class="arrow">↗</span></a>
+  </nav>
+</header>
+
+<!-- ===== HERO + 3D ===== -->
+<section class="hero" id="inicio">
+  <div class="hero__inner">
+
+    <div class="hero__copy">
+      <div class="eyebrow">Rhode Shoes / Catálogo 2026</div>
+      <h1>ON YOUR<span class="out">WAY.</span></h1>
+      <p class="hero__lead">El próximo paso tiene tu estilo. Mirá los modelos, fijate tu talle y escribinos: te lo mandamos a donde estés.</p>
+      <div class="hero__actions">
+        <a class="btn btn--dark" href="#catalogo">Ver el catálogo <span class="arrow">↓</span></a>
+        <a class="btn btn--ghost" href="#talles">Guía de talles</a>
+      </div>
+    </div>
+
+    <!-- escenario 3D: se sale del banner a propósito -->
+    <div class="stage" id="stage" aria-hidden="true">
+      <div class="stage__glow"></div>
+      <div class="stage__orbit"></div>
+      <div class="stage__skeleton"></div>
+      <img class="stage__poster" src="assets/shoe-poster.webp"
+           alt="Zapatillas Rhode Shoes" width="900" height="703"
+           fetchpriority="high" decoding="async">
+      <model-viewer id="shoe3d"
+        data-src="assets/models/shoe.glb"
+        alt="Zapatilla Rhode Shoes en 3D"
+        field-of-view="24deg"
+        camera-orbit="-22deg 82deg 84%"
+        environment-image="neutral"
+        tone-mapping="neutral"
+        exposure="1.08"
+        shadow-intensity="0"
+        interaction-prompt="none"
+        disable-zoom disable-pan disable-tap
+        loading="eager"
+        reveal="auto"></model-viewer>
+      <div class="stage__shadow"></div>
+    </div>
+
+
+    <div class="hero__foot">
+      <div class="hero__meta">
+        <div><b id="hero-count">187</b><span>Modelos</span></div>
+        <div><b id="hero-sizes">36–45</b><span>Talles</span></div>
+        <div><b>24h</b><span>Respuesta</span></div>
+      </div>
+      <div class="hero__scroll"><i></i> Seguí bajando</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===== CARRUSEL DE MARCAS ===== -->
+<section class="brands" aria-label="Marcas que trabajamos">
+  <div class="brands__track">
+    <div class="brands__row"><span class="bm"><img src="assets/brands/jordan.svg" alt="" onerror="this.remove()"><b>Jordan</b></span><span class="bm"><img src="assets/brands/nike.svg" alt="" onerror="this.remove()"><b>Nike</b></span><span class="bm"><img src="assets/brands/adidas.svg" alt="" onerror="this.remove()"><b>Adidas</b></span><span class="bm"><img src="assets/brands/new-balance.svg" alt="" onerror="this.remove()"><b>New Balance</b></span><span class="bm"><img src="assets/brands/asics.svg" alt="" onerror="this.remove()"><b>Asics</b></span><span class="bm"><img src="assets/brands/puma.svg" alt="" onerror="this.remove()"><b>Puma</b></span><span class="bm"><img src="assets/brands/vans.svg" alt="" onerror="this.remove()"><b>Vans</b></span><span class="bm"><img src="assets/brands/converse.svg" alt="" onerror="this.remove()"><b>Converse</b></span></div>
+    <div class="brands__row" aria-hidden="true"><span class="bm"><img src="assets/brands/jordan.svg" alt="" onerror="this.remove()"><b>Jordan</b></span><span class="bm"><img src="assets/brands/nike.svg" alt="" onerror="this.remove()"><b>Nike</b></span><span class="bm"><img src="assets/brands/adidas.svg" alt="" onerror="this.remove()"><b>Adidas</b></span><span class="bm"><img src="assets/brands/new-balance.svg" alt="" onerror="this.remove()"><b>New Balance</b></span><span class="bm"><img src="assets/brands/asics.svg" alt="" onerror="this.remove()"><b>Asics</b></span><span class="bm"><img src="assets/brands/puma.svg" alt="" onerror="this.remove()"><b>Puma</b></span><span class="bm"><img src="assets/brands/vans.svg" alt="" onerror="this.remove()"><b>Vans</b></span><span class="bm"><img src="assets/brands/converse.svg" alt="" onerror="this.remove()"><b>Converse</b></span></div>
+  </div>
+</section>
+
+<!-- ===== CATÁLOGO ===== -->
+<main class="catalog" id="catalogo">
+  <div class="sec-head reveal">
+    <div>
+      <div class="eyebrow">Encontrá tu próximo par</div>
+      <h2>Elegí tu estilo<span class="dot">.</span></h2>
+    </div>
+    <div class="count" id="count">187 modelos</div>
+  </div>
+  <div class="cats" id="cats" role="group" aria-label="Categoría"></div>
+  <div class="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
+    </svg>
+    <input id="q" type="search" autocomplete="off" spellcheck="false"
+           placeholder="Buscar modelo, color o talle — probá “panda”, “rosa”, “41”"
+           aria-label="Buscar en el catálogo">
+    <button type="button" id="qx" class="search__x" aria-label="Limpiar búsqueda" hidden>×</button>
+  </div>
+  <div class="chips" id="chips" role="group" aria-label="Filtrar por marca"></div>
+  <p class="empty" id="empty" hidden>
+    No encontramos nada con eso. <button type="button" id="qreset">Ver todo el catálogo</button>
+  </p>
+  <div class="grid" id="grid"><!-- se completa desde js/products.js --></div>
+  <div class="more-wrap">
+    <button class="btn btn--ghost" id="more" type="button">Ver más <span class="arrow">↓</span></button>
+  </div>
+  <p class="card__note reveal" style="margin-top:30px;max-width:62ch">
+    Los talles que ves son los que tenemos en stock. Si no está el tuyo, escribinos igual: rotamos modelos todas las semanas.
+  </p>
+</main>
+
+<!-- ===== GUÍA DE TALLES ===== -->
+<section class="sizes-sec diag-both diag-flip" id="talles">
+  <div class="sizes-sec__grid">
+    <div class="reveal">
+      <div class="eyebrow">Antes de elegir</div>
+      <h2>Tu talle,<br>sin vueltas<span class="dot">.</span></h2>
+      <p>La equivalencia cambia según la marca. Medí el pie una vez y usá ese número como referencia para todo el catálogo.</p>
+      <ol class="howto">
+        <li>Apoyá el pie sobre una hoja, con el talón contra la pared.</li>
+        <li>Marcá la punta del dedo más largo y medí en centímetros.</li>
+        <li>Buscá ese número en la columna CM de la tabla.</li>
+        <li>Si quedás entre dos talles, elegí el más grande.</li>
+      </ol>
+    </div>
+    <div class="table-scroll reveal">
+      <table>
+        <thead><tr><th>ARG</th><th>US Hombre</th><th>US Mujer</th><th>EUR</th><th>CM</th></tr></thead>
+        <tbody>
+          <tr><td>36</td><td>4.5</td><td>6</td><td>36.5</td><td>23.0</td></tr>
+          <tr><td>37</td><td>5.5</td><td>7</td><td>37.5</td><td>23.5</td></tr>
+          <tr><td>38</td><td>6.5</td><td>8</td><td>38.5</td><td>24.5</td></tr>
+          <tr><td>39</td><td>7</td><td>8.5</td><td>40</td><td>25.0</td></tr>
+          <tr><td>40</td><td>8</td><td>9.5</td><td>41</td><td>26.0</td></tr>
+          <tr><td>41</td><td>9</td><td>10.5</td><td>42</td><td>27.0</td></tr>
+          <tr><td>42</td><td>10</td><td>11.5</td><td>43</td><td>28.0</td></tr>
+          <tr><td>43</td><td>11</td><td>12.5</td><td>44</td><td>29.0</td></tr>
+          <tr><td>44</td><td>12</td><td>13.5</td><td>45</td><td>30.0</td></tr>
+          <tr><td>45</td><td>13</td><td>14.5</td><td>46</td><td>31.0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOBRE RHODE + INSTAGRAM ===== -->
+<section class="about" id="marca">
+  <div class="about__top">
+    <div class="reveal">
+      <div class="eyebrow">Sobre nosotros</div>
+      <h2>Hecho para<br>andar<span class="dot">.</span></h2>
+    </div>
+    <div class="about__text reveal">
+      <p>Rhode Shoes nació en <strong>Banfield</strong> con una idea simple: que conseguir el par que querés no sea un trámite. Seleccionamos modelo por modelo y mostramos solo lo que realmente tenemos.</p>
+      <p>Sin precios de vidriera ni carrito: vos elegís, nos escribís y lo resolvemos en el día. <strong>Envíos a todo el país.</strong></p>
+      <div class="pills"><span>Selección curada</span><span>Stock real</span><span>Envíos 24–72h</span><span>Cambio de talle</span></div>
+    </div>
+  </div>
+
+  <div class="ig-head reveal">
+    <div>
+      <div class="eyebrow">En Instagram</div>
+      <h2>@rhode.shoes</h2>
+    </div>
+    <a class="btn btn--ghost" href="https://www.instagram.com/rhode.shoes/" target="_blank" rel="noopener">Seguinos <span class="arrow">↗</span></a>
+  </div>
+  <div class="ig-grid reveal">
+    <a href="https://www.instagram.com/rhode.shoes/" target="_blank" rel="noopener"><img src="assets/instagram/ig-1.webp" alt="" loading="lazy" onerror="this.remove()"></a>
+    <a href="https://www.instagram.com/rhode.shoes/" target="_blank" rel="noopener"><img src="assets/instagram/ig-2.webp" alt="" loading="lazy" onerror="this.remove()"></a>
+    <a href="https://www.instagram.com/rhode.shoes/" target="_blank" rel="noopener"><img src="assets/instagram/ig-3.webp" alt="" loading="lazy" onerror="this.remove()"></a>
+    <a href="https://www.instagram.com/rhode.shoes/" target="_blank" rel="noopener"><img src="assets/instagram/ig-4.webp" alt="" loading="lazy" onerror="this.remove()"></a>
+    <a href="https://www.instagram.com/rhode.shoes/" target="_blank" rel="noopener"><img src="assets/instagram/ig-5.webp" alt="" loading="lazy" onerror="this.remove()"></a>
+    <a href="https://www.instagram.com/rhode.shoes/" target="_blank" rel="noopener"><img src="assets/instagram/ig-6.webp" alt="" loading="lazy" onerror="this.remove()"></a>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq diag-top" id="faq">
+  <div class="faq__grid">
+    <div class="reveal">
+      <div class="eyebrow">Dudas frecuentes</div>
+      <h2>Todo lo que<br>nos preguntan<span class="dot">.</span></h2>
+      <p class="sub">¿Quedó algo afuera? Escribinos por Instagram o WhatsApp.</p>
+    </div>
+    <div class="reveal">
+      <details open><summary>¿Por qué no hay precios en la web?</summary>
+        <p>Trabajamos con stock rotativo y cotizaciones que cambian seguido. Para no publicar precios desactualizados, te pasamos el valor del modelo que te interesa en el momento que nos escribís.</p></details>
+      <details><summary>¿Cómo compro?</summary>
+        <p>Elegís el modelo y el talle en el catálogo, nos escribís por WhatsApp o Instagram con el nombre del par, y te confirmamos disponibilidad, precio y forma de envío en el día.</p></details>
+      <details><summary>¿Hacen envíos a todo el país?</summary>
+        <p>Sí. En CABA y GBA entregamos en 24 a 48 horas. Al interior el envío sale por correo y demora entre 3 y 6 días hábiles según la localidad.</p></details>
+      <details><summary>¿Puedo cambiar el talle?</summary>
+        <p>Sí, dentro de los 7 días de recibido y siempre que el par esté sin uso y con su caja original. El cambio queda sujeto a disponibilidad del talle nuevo.</p></details>
+      <details><summary>¿Cómo sé qué talle pedir?</summary>
+        <p>Usá la guía de talles: medí tu pie en centímetros y buscá la equivalencia en la tabla. Si dudás entre dos números, siempre conviene el más grande.</p></details>
+      <details><summary>¿Tienen local para probarse?</summary>
+        <p>Estamos en Banfield y coordinamos visitas con turno previo. Escribinos y armamos un horario.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="cta-final diag-top diag-flip">
+  <div class="cta-final__in reveal">
+    <div class="eyebrow">Último paso</div>
+    <h2>¿Viste algo<br>que te gusta?</h2>
+    <p>Mandanos el modelo y el talle. Te confirmamos stock, precio y envío en el día.</p>
+    <a class="btn btn--dark" href="https://wa.me/5491100000000?text=Hola%20Rhode!%20Vi%20el%20cat%C3%A1logo%20y%20me%20interesa%20un%20modelo" target="_blank" rel="noopener">Escribinos por WhatsApp <span class="arrow">↗</span></a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="site-footer__top">
+    <div>
+      <div class="eyebrow" style="color:var(--rose-2)">Rhode Shoes</div>
+      <p style="margin-top:12px">Tu estilo.<br>Tu próximo paso.</p>
+    </div>
+    <nav class="site-footer__links">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#talles">Talles</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://www.instagram.com/rhode.shoes/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+  </div>
+  <div class="bigmark">rhode<span class="dot">.</span></div>
+  <div class="site-footer__bottom">
+    <span>Banfield, Buenos Aires</span>
+    <span>Envíos a todo el país</span>
+    <span>© <span id="year">2026</span> Rhode Shoes</span>
+  </div>
+</footer>
+
+
+<dialog class="lb" id="lb" aria-labelledby="lbname">
+  <button class="lb__x" id="lbx" type="button" aria-label="Cerrar">×</button>
+  <div class="lb__grid">
+    <figure class="lb__pic" id="lbpic"></figure>
+    <div class="lb__info">
+      <div class="card__brand" id="lbbrand"></div>
+      <h3 id="lbname"></h3>
+      <p class="card__variant" id="lbvar"></p>
+      <div class="lb__block">
+        <div class="eyebrow" id="lbsizeslabel">Talles disponibles</div>
+        <div class="card__sizes" id="lbsizes"></div>
+      </div>
+      <button class="btn btn--dark lb__ask" id="lbask" type="button">
+        Consultar por Instagram <span class="arrow">↗</span>
+      </button>
+      <p class="lb__note">Elegí tu talle y te copiamos el mensaje listo para pegar en el chat.</p>
+    </div>
+  </div>
+</dialog>
+
+
+<dialog class="ask" id="ask" aria-labelledby="asktitle">
+  <button class="lb__x" id="askx" type="button" aria-label="Cerrar">×</button>
+  <div class="ask__in">
+    <div class="eyebrow">Tu consulta</div>
+    <h3 id="asktitle"></h3>
+    <p class="ask__msg" id="askmsg"></p>
+    <button class="btn btn--dark ask__go" id="askgo" type="button">
+      Copiar y abrir Instagram <span class="arrow">↗</span>
+    </button>
+    <p class="ask__hint">
+      Instagram no permite dejar el mensaje escrito de antemano. Lo copiamos:
+      cuando se abra el chat, mantené apretado en el campo de texto y tocá <b>Pegar</b>.
+    </p>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

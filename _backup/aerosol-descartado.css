@@ -1,0 +1,119 @@
+/* Descartado: bordes de aerosol (v2.1). Se probó y no convenció.
+   Para retomarlo hay que volver a agregar en el HTML el <svg class="fx-defs">,
+   el <div class="hero__edge"> dentro de .hero y las clases spray-both /
+   spray-top / spray-bottom en topbar, sizes-sec, faq, cta-final y footer.
+   Pendiente si se retoma: el tile de 400px se repite y se nota. */
+
+/* ============================================================
+   23. v2.1 — bordes de aerosol
+   Los bloques de color plano ya no cortan en línea recta: el
+   borde se deshace en puntitos, como el rocío de un aerosol.
+   Cómo funciona: el fondo de cada sección pasa a un ::before
+   que sobresale --band px arriba y abajo, y se enmascara con
+   tres capas: puntitos · color pleno · puntitos.
+   Para ajustar la densidad, tocá el -.38 del feColorMatrix
+   dentro de --spray-up / --spray-down.
+   ============================================================ */
+:root{
+  --spray-up:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='110' viewBox='0 0 400 110'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23000'/%3E%3Cstop offset='.4' stop-color='%23666'/%3E%3Cstop offset='1' stop-color='%23fff'/%3E%3C/linearGradient%3E%3Cmask id='m'%3E%3Crect width='400' height='110' fill='url(%23g)'/%3E%3C/mask%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55' numOctaves='3' seed='6'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 0 0 0 -.38'/%3E%3C/filter%3E%3C/defs%3E%3Cg mask='url(%23m)'%3E%3Crect width='400' height='110' filter='url(%23s)'/%3E%3C/g%3E%3C/svg%3E");
+  --spray-down:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='110' viewBox='0 0 400 110'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='.6' stop-color='%23666'/%3E%3Cstop offset='1' stop-color='%23000'/%3E%3C/linearGradient%3E%3Cmask id='m'%3E%3Crect width='400' height='110' fill='url(%23g)'/%3E%3C/mask%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55' numOctaves='3' seed='19'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 0 0 0 -.38'/%3E%3C/filter%3E%3C/defs%3E%3Cg mask='url(%23m)'%3E%3Crect width='400' height='110' filter='url(%23s)'/%3E%3C/g%3E%3C/svg%3E");
+  --drip:#e6b9cd;
+  --band:70px;
+}
+.fx-defs{position:absolute;width:0;height:0;overflow:hidden}
+
+/* --- helper: bloque con los dos bordes rociados --- */
+.spray-both{background:none!important;position:relative;isolation:isolate}
+.spray-both::before{
+  content:"";position:absolute;left:0;right:0;z-index:-1;pointer-events:none;
+  top:calc(-1 * var(--band));bottom:calc(-1 * var(--band));
+  background:var(--blk);
+  -webkit-mask-image:var(--spray-up),linear-gradient(#000,#000),var(--spray-down);
+          mask-image:var(--spray-up),linear-gradient(#000,#000),var(--spray-down);
+  -webkit-mask-size:400px 110px,100% calc(100% - 220px),400px 110px;
+          mask-size:400px 110px,100% calc(100% - 220px),400px 110px;
+  -webkit-mask-position:top left,left center,bottom left;
+          mask-position:top left,left center,bottom left;
+  -webkit-mask-repeat:repeat-x,no-repeat,repeat-x;
+          mask-repeat:repeat-x,no-repeat,repeat-x;
+}
+/* --- sólo el borde de arriba --- */
+.spray-top{background:none!important;position:relative;isolation:isolate}
+.spray-top::before{
+  content:"";position:absolute;left:0;right:0;bottom:0;z-index:-1;pointer-events:none;
+  top:calc(-1 * var(--band));background:var(--blk);
+  -webkit-mask-image:var(--spray-up),linear-gradient(#000,#000);
+          mask-image:var(--spray-up),linear-gradient(#000,#000);
+  -webkit-mask-size:400px 110px,100% calc(100% - 110px);
+          mask-size:400px 110px,100% calc(100% - 110px);
+  -webkit-mask-position:top left,bottom left;
+          mask-position:top left,bottom left;
+  -webkit-mask-repeat:repeat-x,no-repeat;
+          mask-repeat:repeat-x,no-repeat;
+}
+/* --- sólo el borde de abajo --- */
+.spray-bottom{background:none!important;position:relative;isolation:isolate}
+.spray-bottom::before{
+  content:"";position:absolute;left:0;right:0;top:0;z-index:-1;pointer-events:none;
+  bottom:calc(-1 * var(--band));background:var(--blk);
+  -webkit-mask-image:linear-gradient(#000,#000),var(--spray-down);
+          mask-image:linear-gradient(#000,#000),var(--spray-down);
+  -webkit-mask-size:100% calc(100% - 110px),400px 110px;
+          mask-size:100% calc(100% - 110px),400px 110px;
+  -webkit-mask-position:top left,bottom left;
+          mask-position:top left,bottom left;
+  -webkit-mask-repeat:no-repeat,repeat-x;
+          mask-repeat:no-repeat,repeat-x;
+}
+
+/* --- qué bloque usa qué color --- */
+.topbar{--blk:var(--ink);--band:44px}
+.sizes-sec{--blk:var(--mist);border-block:0}
+.faq{--blk:var(--night)}
+.cta-final{--blk:linear-gradient(150deg,var(--rose) 0%,var(--rose-2) 100%)}
+.cta-final::before{background:var(--grain),linear-gradient(150deg,var(--rose) 0%,var(--rose-2) 100%);background-blend-mode:multiply;opacity:1;mix-blend-mode:normal;inset:auto}
+.site-footer{--blk:var(--night)}
+
+/* --- el borde diagonal del hero: rociado + chorreados --- */
+.hero__edge{
+  position:absolute;left:-5%;right:-5%;height:0;z-index:2;pointer-events:none;
+  top:calc(100% - var(--rise) / 2);
+  rotate:calc(-1 * var(--tilt));
+}
+.hero__edge::before,.hero__edge::after{
+  content:"";position:absolute;left:0;right:0;height:78px;
+  -webkit-mask-size:400px 78px;mask-size:400px 78px;
+  -webkit-mask-repeat:repeat-x;mask-repeat:repeat-x;
+}
+.hero__edge::before{                 /* come el rosa desde el borde hacia arriba */
+  bottom:0;background:#fff;
+  -webkit-mask-image:var(--spray-up);mask-image:var(--spray-up);
+}
+.hero__edge::after{                  /* rocío que cae sobre las marcas */
+  top:0;background:var(--drip);
+  -webkit-mask-image:var(--spray-down);mask-image:var(--spray-down);
+}
+.drip{
+  position:absolute;top:-2px;z-index:2;
+  width:var(--dw,9px);height:var(--dh,30px);
+  background:var(--drip);border-radius:0 0 999px 999px;
+}
+.drip::after{
+  content:"";position:absolute;left:50%;translate:-50% 0;
+  bottom:calc(-.42 * var(--dw,9px));
+  width:calc(1.3 * var(--dw,9px));height:calc(1.3 * var(--dw,9px));
+  border-radius:50%;background:var(--drip);
+}
+
+/* --- tipografía con borde de esténcil --- */
+.hero h1 .out{filter:url(#fx-rough)}
+.bigmark{filter:url(#fx-rough-soft)}
+
+@media(max-width:900px){
+  :root{--band:52px}
+  .hero__edge::before,.hero__edge::after{height:56px}
+  .hero__edge::before{-webkit-mask-size:300px 56px;mask-size:300px 56px}
+  .hero__edge::after{-webkit-mask-size:300px 56px;mask-size:300px 56px}
+  .drip{--dh:22px}
+}
+@media(prefers-reduced-motion:reduce){.drip{display:none}}
